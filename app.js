@@ -7,7 +7,7 @@ function onReady(){
     const toDoList = document.getElementById('toDoList');
     toDoList.textContent = '';
 
-    toDos.forEach(function(toDo){
+    toDos.forEach(function(toDos){
         const newLI = document.createElement('li');
         const checkbox = document.createElement('input');
         checkbox.type = "checkbox";
@@ -17,14 +17,14 @@ function onReady(){
 
       deleteBtn.addEventListener('click', event => {
         toDos = toDos.filter(function(item){
-          return item.id !== toDo.id
+          return item.id !== toDos.id
 
         })
 
         renderTheUI();
       });
 
-        newLI.textContent = toDo.title;
+        newLI.textContent = toDos.title;
 
         newLI.appendChild(checkbox);
         toDoList.appendChild(newLI);
@@ -35,9 +35,9 @@ function onReady(){
   function createNewToDo(){
     const newToDoText = document.getElementById('newToDoText');
     if(!newToDoText.value){ return; }
-    toDo.push({
+    toDos.push({
       title: newToDoText.value,
-      complete: false
+      complete: false,
       id: id
     });
 
